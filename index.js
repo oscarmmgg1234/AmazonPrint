@@ -3,9 +3,9 @@ const app = express();
 const port = 3006;
 app.use(express.json()); // for application/json
 app.use(express.urlencoded({ extended: true }));
-const controller = require("./SRC/controller").controller;
+const controller = require("./SRC/controlllers/controller").controller;
 const Controller = new controller();
-const { generateUPCLabels } = require("./SRC/upcComposer");
+const { generateUPCLabels } = require("./SRC/services/upc/upcComposer");
 
 
 app.get("/getProducts", (req, res) => {
