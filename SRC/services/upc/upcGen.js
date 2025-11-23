@@ -36,7 +36,7 @@ async function generateUPCA(upc, opts = {}) {
     scale: 3, // Fine-tune until final output = 460x308
     includetext: true, // Show human-readable text
     textxalign: "center",
-    textsize: 10, // Rendered font size (adjust as needed)
+    textsize: 15, // Rendered font size (adjust as needed)
     height: 48, // Barcode bar height inside the image
     paddingwidth: 0,
     paddingheight: 0,
