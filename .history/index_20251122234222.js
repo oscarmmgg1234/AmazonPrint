@@ -26,7 +26,7 @@ app.post("/printJob", async (req, res) => {
   //const quantity
   try {
     const { product, quantity } = req.body;
-
+    
     if (!product || !product.name)
       return res
         .status(400)

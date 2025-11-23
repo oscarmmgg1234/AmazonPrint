@@ -26,6 +26,7 @@ app.post("/printJob", async (req, res) => {
   //const quantity
   try {
     const { product, quantity } = req.body;
+    console.log("Checking UPC:", product.upc);
 
     if (!product || !product.name)
       return res
