@@ -1,10 +1,10 @@
-const AssetManager = require("../services/upc/assetManager").AssetManager;
+
 const { query_manager } = require("../db/dbManger");
 const { v4: uuidv4 } = require("uuid");
 
 class controller {
   constructor() {
-    this.assetManager = new AssetManager();
+    
   }
 
   async checkIfProductExists(upc) {
