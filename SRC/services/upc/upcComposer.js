@@ -1,7 +1,7 @@
 const {generateUPCA} = require("../upc/upcGen");
 const PDFDocument = require("pdfkit");
 const path = require("path");
-const { query_manager } = require("../../db/dbManager.js");
+const { query_manager } = require("../../db/dbManger");
 
 const PT_PER_IN = 72;
 const inToPt = (inches) => Math.round(inches * PT_PER_IN * 1000) / 1000;
@@ -14,7 +14,7 @@ const inToPt = (inches) => Math.round(inches * PT_PER_IN * 1000) / 1000;
  * @returns {Promise<string[]>} array of Base64-encoded PDFs
  */
 async function generateUPCLabels(product, quantity, opts = {}) {
-  await query_manger.raw("INSERT INTO AmazonPrintLog (product, upc, quanity) VALUES (?, ?, ?)", [product.name, product.upc, quanity]);
+  await query_manager.raw("INSERT INTO AmazonPrintLog (product, upc, quantity) VALUES (?, ?, ?)", [product.name, product.upc, quantity]);
   
   if (!product || !product.name) throw new Error("product.name is required");
   if (!product.upc) throw new Error("product.upc is required");
